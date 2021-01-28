@@ -1,0 +1,22 @@
+After JIRA installation- open JIRA Url on the browser and follow the steps below to set up the first time use.
+Following link contains the several database setup instruction with Jira
+https://confluence.atlassian.com/doc/database-configuration-159764.html
+Install PostgreSQL
+Step1: After JIRA installation- open JIRA Url on the browser and follow the steps below to set up the first time use.
+Choose-  I'll setup myself 
+Step2: Select Next
+At Database setup page - Choose My own database and fill the required detail to access the database.
+https://confluence.atlassian.com/doc/database-setup-for-postgresql-173244522.html
+ a: Database type: PostgreSQL
+ b: Hostname: localhost
+ c: Port: 5432
+ d: Database: Jira
+ e: username: postgres
+ f: Password: ********
+ g: Scehma: Public
+ 
+ 
+MS SQL default port: 3306
+Microsoft SQL server default port: 1433
+Oracle default port: 1521
+PosgreSQL default port: 5432
