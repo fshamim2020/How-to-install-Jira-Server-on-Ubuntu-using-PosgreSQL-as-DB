@@ -1,0 +1,52 @@
+Step 1- Install PostgreSQL-
+PostgreSQL is the first prerequisites that we have to install- Use command below to start the installation.
+$ sudo apt install postgresql
+After PostgreSQL installation, Check service status.
+$ sudo systemctl status postgresql
+Step 2- Set the password for postgres user
+PostgreSQL no default password set, let use following command to set first time.
+$ sudo -u postgres psql postgres
+Set the password
+\password postgres
+ Enter password when prompt and confirm password again when prompt.
+Close psql
+\q
+Step 3 - Allow postgre user access - Search for the postgresql version and then run the following command
+To allow access for postgre user, we need to modify config file- follow the steps to make changes :
+$ sudo vi /etc/postgresql/9.5/main/pg_hba.conf
+Modify the following line. your config file should be like below.
+
+# Database administrative login by Unix domain socket
+local   all             postgres                                md5
+
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             all                                     md5
+#local   all             all                                     peer
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            md5
+# IPv6 local connections:
+host    all             all             ::1/128                 md5
+# Allow replication connections from localhost, by a user with the
+# replication privilege.
+Save and Exit from the file.
+Step 4 - Restart postgresql service and test access -
+To restart postgresql service-
+$ sudo systemctl restart postgresql
+To test postges user access
+$ sudo psql -U postgres -W
+Login working successfully with user PostgreSQL
+Step 5 - Create database, user and password for JIRA
+During the JIRA setup wizard, we require Postgres login details- let's setup here.
+Login to Postgres server using postgres user
+$ sudo psql -U postgres -W
+Create database
+postgres=# create database "JIRA";
+CREATE DATABASE
+Create User and assign permission on database JIRA
+postgres=# create user jirau
+Set password for user jirau
+postgres=# alter user jirau password 'password';
+Grant permission to user jirau on database JIRA
+postgres=# grant ALL ON DATABASE JIRA to jirau
