@@ -1,0 +1,25 @@
+Step 1: 
+Download jira: Jira Software at https://www.atlassian.com/software/jira/download
+wget https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-software-7.8.2-x64.bin
+
+Step 2: Run Installer , make it executable: 
+$ chmod a+x atlassian-jira-software-X.X.X-x64.bin
+$ sudo chmod a+x atlassian-jira-software-7.8.2-x64.bin
+
+
+Step 3: Run installer , create a dedicated account to run jira 
+$ sudo ./atlassian-jira-software-X.X.X-x64.bin
+$ sudo ./atlassian-jira-software-7.8.2-x64.bin
+press enter key when prompt
+
+Step 4: 
+At next screen choose- Custom Install (recommended for advanced users) [2, Enter]
+Choose JIRA installation directory - Enter to choose default path - [/opt/atlassian/jira]
+Press Enter (Default location for JIRA Software data)
+Type 1  and press enter key to choose default port (HTTP: 8080, Control: 8005)
+Type y and hit enter (To start Jira service when system restart)
+Type i to install Jira as service
+Press y to start JIRA instance
+
+Step 5: JIRA installation done successfully. Let's access JIRA instance after finding ip through ipconfig as shown below
+http://192.168.102.10:8080
