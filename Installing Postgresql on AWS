@@ -1,0 +1,9 @@
+sudo yum list sudo postgresql
+sudo yum install  postgresql.x86_64
+
+sudo su - postgres
+ls
+initdb data
+ pg_ctl -D data -l logfile start
+
+Exit 
