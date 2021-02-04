@@ -1,0 +1,41 @@
+sudo docker pull mcr.microsoft.com/mssql/server:2019-latest
+sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Apka189@" \
+   -p 1433:1433 --name sql1 -h sql1 \
+   -d mcr.microsoft.com/mssql/server:2019-latest
+#view container
+sudo docker ps -a
+
+#connect to sql server
+sudo docker exec -it sql1 "bash"
+#Once inside the container, connect locally with sqlcmd. Sqlcmd is not in the path by default, so you have to specify the full path.
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Apka189@"
+
+#Create new DB
+CREATE DATABASE TestDB
+
+#On the next line, write a query to return the name of all of the databases on your server:
+SELECT Name from sys.Databases
+
+#The previous two commands were not executed immediately. Type GO on a new line to execute the previous commands:
+Go
+
+
+# Insert data
+#From the sqlcmd command prompt, switch context to the new TestDB database:
+
+USE TestDB
+
+#Create new table named Inventory:
+CREATE TABLE Inventory (id INT, name NVARCHAR(50), quantity INT)
+
+#Insert data into the new table:
+INSERT INTO Inventory VALUES (1, 'banana', 150); INSERT INTO Inventory VALUES (2, 'orange', 154);
+
+#Type GO to execute the previous commands:
+Go
+
+#Select data
+SELECT * FROM Inventory WHERE quantity > 152;
+SELECT * FROM Inventory WHERE quantity > 140;
+Go
+QUIT
