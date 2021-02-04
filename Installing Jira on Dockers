@@ -1,0 +1,12 @@
+#install Jira server on docker
+docker pull atlassian/jira-software
+
+#To get started you can use a data volume, or named volumes. In this example we'll use named volumes.
+
+docker volume create --name jiraVolume
+
+docker run -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -p 8080:8080 atlassian/jira-software
+
+ifcongig -a
+http://192.168.175.134:8080
+
