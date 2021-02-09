@@ -10,3 +10,8 @@ docker run -v jiraVolume:/var/atlassian/application-data/jira --name="jira" -d -
 ifcongig -a
 http://192.168.175.134:8080
 
+#To quickly get started with running a JIRA instance, first run the following command:
+
+docker run --detach --publish 8080:8080 cptactionhank/atlassian-jira:latest
+run localhost:8080
+
