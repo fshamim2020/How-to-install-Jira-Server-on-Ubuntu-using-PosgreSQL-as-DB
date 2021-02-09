@@ -1,0 +1,13 @@
+Installing SQL server 2012 and Server Managment Studio
+#Create a database for JIRA to store issues in (e.g. jiradb ).
+Create database by right clickcing and give a name "jiradab"
+Under Collation select ""SQL_Latin1_General_CP437_CI_AI""
+Create Schema , right clicking on database name and run query create Scehama A
+#Create a database user which JIRA will connect as (e.g. jiradbuser ).
+#Create an empty 'schema' in the database for the Jira tables  (e.g. jiraschema).
+#ISO level query: 
+Create Schema Jiradb
+ALTER DATABASE jiradb SET READ_COMMITTED_SNAPSHOT ON
+ALTER DATABASE jiradb SET READ_COMMITTED_SNAPSHOT ON WITH ROLLBACK IMMEDIATE
+
+Collation : SQL_Latin1_General_CP437_CI_AI
