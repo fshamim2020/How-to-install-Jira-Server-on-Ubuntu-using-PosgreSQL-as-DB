@@ -11,3 +11,12 @@ ALTER DATABASE jiradb SET READ_COMMITTED_SNAPSHOT ON
 ALTER DATABASE jiradb SET READ_COMMITTED_SNAPSHOT ON WITH ROLLBACK IMMEDIATE
 
 Collation : SQL_Latin1_General_CP437_CI_AI
+
+Connecting sql server with jira server: 
+https://www.youtube.com/watch?v=sZBzyyptmNE
+
+Database Setup for SQL Server: 
+https://confluence.atlassian.com/doc/database-setup-for-sql-server-9258.html
+
+Connecting Jira applications to SQL Server 2016:
+https://confluence.atlassian.com/adminjiraserver/connecting-jira-applications-to-sql-server-2016-948232141.html
